@@ -5,43 +5,40 @@
   <title>Tutorial desarrollo Web</title>
 
   <style>
-    .p {
-      background: green;
-      /* transition: background 5s; */
-      /* transition: transform 3s; */
-      animation: myAnimation 3s linear infinite;
+    .colorRojo {
+      color: red;
     }
-    .p:hover {
-      background: red;
-      /* transform: scale(0.5);
-      transform: rotate(360deg); */
+    div {
+      background: blue;
     }
-
-    @keyframes myAnimation {
-      from {
-        transform: rotate(0deg)
-      }
-      to {
-        transform: rotate(360deg)
-      }
-    }
-
-
-    #parrafo {
-      color: brown;
-    }
-
   </style>
 
 </head>
 
 <body>
+  <div>HOLA</div>
   <p id="parrafo">PRIMER PARRAFO</p>
   <p class="p">SEGUNDO PARRAFO</p>
 
   <input placeholder="ingrese su nombre">
-  <input type="password">
-  <input type="number">
+  <button class="myButton">click me</button>
+
+  <script>
+    const parrafo = document.querySelector("#parrafo")
+    const input = document.querySelector("input")
+    const myButton = document.querySelector(".myButton")
+    const parrafo2 = document.querySelector(".p")
+
+     myButton.addEventListener("click", onClick)
+
+    function onClick() {
+      parrafo.innerHTML = "NUEVO PARRAFO"
+      input.value = "christian"
+      parrafo2.classList.add('colorRojo')
+    }
+
+
+  </script>
 
 </body>
 </html>
